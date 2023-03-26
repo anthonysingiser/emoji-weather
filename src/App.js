@@ -1,4 +1,8 @@
+import WeatherData from "./WeatherData";
+
 function App() {
-  return <div className='App'> Hello World </div>;
+  return (
+    <WeatherData />
+  )
 }
 export default App;
