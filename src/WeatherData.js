@@ -7,7 +7,7 @@ export default function WeatherData() {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        axios('https://api.open-meteo.com/v1/forecast?latitude=39.95&longitude=-75.16&hourly=temperature_2m')
+        axios('https://api.open-meteo.com/v1/forecast?latitude=39.95&longitude=-75.16&hourly=temperature_2m&current_weather=true')
             .then(response => {
                 setData(response.data)
             })
@@ -25,7 +25,7 @@ export default function WeatherData() {
     console.log(data)
     return (
         <>
-            {data.hourly.temperature_2m[0]} Celsius
+            {data.current_weather.temperature * 1.8 + 32}
         </>
     )
 }
