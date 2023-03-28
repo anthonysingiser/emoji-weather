@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import ComfortLevel from './ComfortLevel'
 
 export default function WeatherData() {
     const [data, setData] = useState(null)
@@ -25,7 +26,7 @@ export default function WeatherData() {
     console.log(data)
     return (
         <>
-            {data.current_weather.temperature * 1.8 + 32}
+            <ComfortLevel temp = {data.current_weather.temperature * 1.8 + 32}/>
         </>
     )
 }

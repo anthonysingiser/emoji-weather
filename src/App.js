@@ -1,8 +1,10 @@
 import WeatherData from "./WeatherData";
 
-function App() {
+export default function App() {
   return (
-    <WeatherData />
+    <center>
+      <h2>Currently In Philadelphia:</h2>
+      <WeatherData />
+    </center>
   )
 }
-export default App;
