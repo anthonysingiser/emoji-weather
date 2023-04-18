@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import {api_key} from '../config'
 
 export default function GetCity(props) {
     const [data, setData] = useState(null)
@@ -8,7 +9,7 @@ export default function GetCity(props) {
     const [cityName, setCityName] = useState(null)
 
     useEffect(() => {
-        axios(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${props.lat},${props.long}&result_type=locality&key=AIzaSyBUVgdsblqcdtVgY9ebtzq5cmq3e6yIUeo`)
+        axios(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${props.lat},${props.long}&result_type=locality&key=${api_key}`)
             .then(response => {
                 setData(response.data)
                 setCityName(response.data.results[0].address_components[0].long_name)
