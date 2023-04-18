@@ -1,8 +1,11 @@
 import {useState, useEffect} from 'react'
+import WeatherData from './WeatherData'
+import GetCity from './GetCity'
 
 export default function LatLong () {
-    const [error, setError] = useState()
+    const [error, setError] = useState(null)
     const [location, setLocation] = useState({})
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         if (!navigator.geolocation){
@@ -15,6 +18,7 @@ export default function LatLong () {
                 latitude,
                 longitude
             })
+            setLoading(false)
         }
         const handleError = error => {
             setError(error.message)
@@ -22,5 +26,14 @@ export default function LatLong () {
         
         navigator.geolocation.getCurrentPosition(handleSuccess, handleError)
     }, [])
-    return {location}
+
+    if (error) return 'Error!!'
+    if (loading) return 'Loading...'
+
+    return(
+        <>
+            <GetCity lat={location.latitude} long={location.longitude}/>
+            <WeatherData lat={location.latitude} long={location.longitude}/> 
+        </>
+    )
 }
