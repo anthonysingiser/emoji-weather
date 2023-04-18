@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import {api_key} from '../config'
+import api_key from './config'
 
 export default function GetCity(props) {
     const [data, setData] = useState(null)
