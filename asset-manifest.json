@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/emoji-weather/static/js/main.caa89bbf.js",
+    "index.html": "/emoji-weather/index.html",
+    "main.caa89bbf.js.map": "/emoji-weather/static/js/main.caa89bbf.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.caa89bbf.js"
+  ]
+}
