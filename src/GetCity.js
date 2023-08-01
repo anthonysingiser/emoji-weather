@@ -12,6 +12,7 @@ export default function GetCity(props) {
         axios(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${props.lat},${props.long}&result_type=locality&key=${api_key}`)
             .then(response => {
                 setData(response.data)
+                console.log(response.data)
                 setCityName(response.data.results[0].address_components[0].long_name)
             })
             .catch(error => {
@@ -28,7 +29,7 @@ export default function GetCity(props) {
     console.log(cityName)
     console.log(data)
     return (
-        <h1>
+        <h1 style={{fontFamily: 'Brush Script MT', fontSize:'5rem'}}>
             Currently in {cityName}:
         </h1>
     )

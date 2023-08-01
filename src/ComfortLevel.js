@@ -1,19 +1,19 @@
 
-export default function ComfortLevel(props){
-    if(props.temp <= 50){
-        console.log(props.temp)
-        return <h1 role='img'>🥶</h1>
+export default function ComfortLevel({ temp }){
+    if(temp <= 50){
+        console.log(temp)
+        return <h1 style={{fontSize: '10rem'}}>🥶</h1>
     }   
-    if(props.temp > 50 && props.temp <= 60){
-        return <h1>😬</h1>
+    if(temp > 50 && temp <= 60){
+        return <h1 style={{fontSize: '10rem'}}>😬</h1>
     }
-    if(props.temp > 60 && props.temp <= 80){
-        return <h1>😊</h1>
+    if(temp > 60 && temp <= 80){
+        return  <h1 style={{fontSize: '10rem'}}>😊</h1>
     }
-    if(props.temp > 80 && props.temp <= 89){
-        return <h1>😅</h1>
+    if(temp > 80 && temp <= 89){
+        return <h1 style={{fontSize: '10rem'}}>😅</h1>
     }
     else {
-        return <h1>🥵</h1>
+        return <h1 style={{fontSize: '10rem'}}>🥵</h1>
     }
 }

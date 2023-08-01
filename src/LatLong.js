@@ -31,9 +31,9 @@ export default function LatLong () {
     if (loading) return 'Loading...'
 
     return(
-        <>
+        <div style={{padding: '50px'}}>
             <GetCity lat={location.latitude} long={location.longitude}/>
             <WeatherData lat={location.latitude} long={location.longitude}/> 
-        </>
+        </div>
     )
 }
